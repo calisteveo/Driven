@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  has_many :programs
   def self.from_omniauth(auth)
     where(auth.slice(:provider, :fb_id)).first_or_initialize.tap do |user|
       user.provider = auth.provider
