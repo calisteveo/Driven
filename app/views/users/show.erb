@@ -34,13 +34,13 @@
     <!-- linkable number of contacts, pep, and following -->
   <!-- </div>  -->
 
-  <% title "My Profile" %>
-  <p> Username: <%=h @user.username %></p>
+  
+  <p> Username: <%= @user.name %></p>
   <h2>Friends</h2>
   <ul>
     <% for friendship in @user.friendships %>
     <li>
-      <%=h friendship.friend.username %>
+      <%= friendship.friend.name %>
       (<%= link_to "remove", friendship, :method => :delete %>)
     </li>
     <% end %>
@@ -51,6 +51,6 @@
   <h2> Friended by users </h2>
   <ul>
     <% for user in @user.inverse_friends %>
-    <li><%=h user.username %></li>
+    <li><%= user.name %></li>
     <% end %>
   </ul>
