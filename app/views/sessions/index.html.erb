@@ -5,4 +5,8 @@
     <% else %>
       <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
     <% end %>
+
+    <% if current_user %>
+    	<%= link_to "Add program", new_program_path %>
+   	<% end %>
   </div>

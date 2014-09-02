@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20140813160052) do
   enable_extension "plpgsql"
 
   create_table "programs", force: true do |t|
-    t.string   "u_id"
+    t.integer  "user_id"
     t.string   "video_url"
     t.string   "goal"
     t.string   "frequency"
@@ -27,6 +27,8 @@ ActiveRecord::Schema.define(version: 20140813160052) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "programs", ["user_id"], name: "index_programs_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "provider"
