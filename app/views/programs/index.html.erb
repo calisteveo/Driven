@@ -6,3 +6,5 @@
 	<li><%= p.goal %> <%= link_to "edit", edit_program_path(p) %></li>
 <% end %>
 </ul>
+
+<%= link_to "Profile page", user_path(current_user.id) %>
