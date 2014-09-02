@@ -6,6 +6,8 @@ gem 'rails', '4.0.4'
 # Use postgresql as the database for Active Record
 gem 'pg'
 
+gem 'rails_12factor', :group => :production
+
 gem 'omniauth-facebook'
 
 gem 'dotenv-rails', :groups => [:development, :test]
