@@ -3,11 +3,17 @@
 <div id="users">
   <% for user in @users %>
   <div class="user">
-    <p>
-      <strong><%=h user.name %></strong>
-      <%= link_to "Add friend", friendships_path(:friend_id => user), :method => :post %>
-      <div class="clear"></div>
-    </p>
+  	<% unless @id == user.id %>
+	    <p>
+	      <strong><%=h user.name %></strong>
+	      	<% if @friendships.find_by(friend_id: user)%>
+	      		Added!
+	      	<% else %>
+	      		<%= link_to "Add friend", friendships_path(:friend_id => user), :method => :post %>
+	      	<% end %>
+	      <div class="clear"></div>
+	    </p>
+    <% end %>
   </div>
   <% end %>
 </div>
