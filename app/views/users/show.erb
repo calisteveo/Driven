@@ -1,0 +1,56 @@
+<!-- <div id="wrap">
+  <div id="photo">
+    Photo
+    </div>
+
+  <div id="progress">
+    current progress bar
+  </div>
+
+
+  <div id="name">
+  Username
+  Full name
+  </div> 
+
+  <div id="goal">
+    Current Goal
+  </div>
+
+  <div id="prevPrograms">
+    <= link_to "Programs Completed" %> -->
+    <!-- clickable div to show previous programs completed -->
+  <!-- </div>
+
+  <div id="inspiredBy">
+    <= link_to "Inspired By" %>
+    <!-- clickable div to show people/programs that inspire you -->
+  <!-- </div>
+</div>
+<div id="contacts">
+    <= link_to "Contacts" %>
+    <= link_to "Pep" %>
+    <= link_to "Following" %>
+    <!-- linkable number of contacts, pep, and following -->
+  <!-- </div>  -->
+
+  
+  <p> Username: <%= @user.name %></p>
+  <h2>Friends</h2>
+  <ul>
+    <% for friendship in @user.friendships %>
+    <li>
+      <%= friendship.friend.name %>
+      (<%= link_to "remove", friendship, :method => :delete %>)
+    </li>
+    <% end %>
+  </ul>
+
+  <p><%= link_to "Find Friends", users_path %></p>
+
+  <h2> Friended by users </h2>
+  <ul>
+    <% for user in @user.inverse_friends %>
+    <li><%= user.name %></li>
+    <% end %>
+  </ul>
