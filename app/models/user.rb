@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   has_many :programs
   
   def self.from_omniauth(auth)
-    user = User.find_by(:fb_id => auth.id)  
+    user = User.find_by(:fb_id => auth.uid)  
     user || create_from_omniauth(auth)
   end
 
