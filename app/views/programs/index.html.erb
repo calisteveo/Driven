@@ -1,0 +1,8 @@
+<%= link_to "Add new program", new_program_path %>
+
+</br></br>
+<ul>
+<% @programs.each do |p| %>
+	<li><%= p.goal %> <%= link_to "edit", edit_program_path(p) %></li>
+<% end %>
+</ul>

@@ -6,4 +6,6 @@ Driven::Application.routes.draw do
   get 'signout', to: 'sessions#destroy', as: 'signout'
   
   root to: "sessions#index"
+
+  resources :programs
 end
