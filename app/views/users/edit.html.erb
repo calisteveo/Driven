@@ -1,0 +1,6 @@
+<h1>Enter username</h1>
+
+<%= form_for :username, url: edit_user_path do %>
+  <%= text_field_tag :username %>
+  <%= submit_tag "Update" %>
+<% end %>
